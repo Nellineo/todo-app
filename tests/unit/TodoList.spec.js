@@ -1,7 +1,8 @@
 import Vuex from 'vuex'
-import { shallow, createLocalVue } from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
 import TodoList from '@/components/TodoList'
-import TestHelpers from '@/tests/TestHelpers'
+import TestHelpers from '../test-helpers'
+
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
@@ -12,7 +13,7 @@ describe('TodoList', () => {
   let h
   beforeEach(() => {
       store = new Vuex.Store({})
-      wrapper = shallow(TodoList, { localVue, store })
+      wrapper = shallowMount(TodoList, { localVue, store })
       h = new TestHelpers(wrapper, expect)
   })
 
@@ -20,6 +21,6 @@ describe('TodoList', () => {
       expect(wrapper.isVueInstance()).toBeTruthy()
   })
   it('shows loader at first and then hides when todos have loaded', () => {
-      h.domHas('.loader')
+      h.domHas('.lds-ring')
   })
 })
