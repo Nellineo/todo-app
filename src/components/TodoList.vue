@@ -24,7 +24,6 @@
 <script>
 import TodoItem from './TodoItem'
 import TodoRemaining from './TodoRemaining'
-import { Checkbox, Button } from 'element-ui'
 
 export default {
   name: 'TodoList',
