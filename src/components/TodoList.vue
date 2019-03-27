@@ -12,7 +12,7 @@
     </div>
     <transition-group name="fade" enter-active-class="animated fadeInUp" leave-active-class="animated fadeOutDown">
     <TodoItem v-for="(todo, index) in todosFiltered" 
-    :key="todo.id" :todo="todo" :index="index" :checkAll="!anyRemaining">            
+    :key="todo.id" :todo="todo" :index="index">            
     </TodoItem>
     </transition-group>
     <div class="check-container">
@@ -43,12 +43,6 @@ export default {
   },
 
   computed: {
-      anyRemaining() {
-          return this.$store.getters.anyRemaining
-      },
-     filter() {
-            return this.$store.state.filter
-        },
 
       todosFiltered() {
           return this.$store.getters.todosFiltered
