@@ -1,5 +1,5 @@
 <template>
-    <div>{{ remaining }} remaining</div>
+    <div class="remaining">{{ remaining }} remaining</div>
 </template>
 
 <script>

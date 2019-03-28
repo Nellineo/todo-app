@@ -4,9 +4,9 @@ class TestHelpers {
       this.expect = expect
     }
 
-    domHas(selector) {
-        this.expect(this.wrapper.contains(selector)).toBe(true)
-    }
+    // domHas(selector) {
+    //     this.expect(this.wrapper.contains(selector)).toBe(true)
+    // }
 
 }
 

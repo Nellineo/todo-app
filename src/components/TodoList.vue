@@ -24,6 +24,9 @@
 <script>
 import TodoItem from './TodoItem'
 import TodoRemaining from './TodoRemaining'
+import { mapGetters } from 'vuex'
+
+
 
 export default {
   name: 'TodoList',
@@ -38,7 +41,7 @@ export default {
   },
 
   created() {
-      this.$store.dispatch('retrieveTodos')
+      this.$store.dispatch('retrieveTodos', null, {root:true})
   },
 
   computed: {
@@ -46,6 +49,8 @@ export default {
       todosFiltered() {
           return this.$store.getters.todosFiltered
       },
+
+      ...mapGetters('store', ['remaining'])
       
   },
 
@@ -95,12 +100,6 @@ export default {
            margin-left: auto;
         }
     }
-
-    .todo-input_field {
-        
-    }
-
-    
 
     .todo-item {
         padding: 10px 20px;
