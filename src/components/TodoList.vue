@@ -2,7 +2,7 @@
   <div class="todo-list">
       <div class="todo-input">
         <el-input type="text" 
-        placeholder="Write Services and Component"
+        placeholder="Add a task"
         v-model="newTodo" @keyup.enter.native="addTodo" class="todo-input_field"/>
         <el-button type="primary" @click="addTodo">Add</el-button>
       </div>
